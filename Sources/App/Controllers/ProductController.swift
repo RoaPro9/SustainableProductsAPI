@@ -45,6 +45,15 @@ struct ProductController: RouteCollection{
         return .noContent
         
     }
+    func update (req: Request) async throws -> HTTPStatus{
+        let product = try req.content.decode(Product.self)
+        guard let product = try await Product.find(product.id , on : req.db) else {
+            throw Abort(.notFound)
+        }
+        product.name = product.name
+        try await product.save(on : req.db)
+        return .ok
+    }
     
     
     
