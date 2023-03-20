@@ -10,6 +10,10 @@ import Vapor
 import Fluent
 import FluentPostgresDriver
 
+
+// MARK: - model
+
+
 final class Product: Model, Content {
     static let schema = "products"
     

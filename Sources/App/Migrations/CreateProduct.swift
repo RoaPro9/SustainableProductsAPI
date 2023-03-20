@@ -7,6 +7,7 @@
 import Fluent
 import Vapor
 
+//CREATE NEW TABLE
 struct CreateProduct : AsyncMigration  {
     func prepare(on database: Database) async throws {
         try await database.schema("products")
@@ -21,7 +22,6 @@ struct CreateProduct : AsyncMigration  {
     func revert(on database: Database) async throws {
         try await database.schema("products").delete()
     }
-    
    
     
 }

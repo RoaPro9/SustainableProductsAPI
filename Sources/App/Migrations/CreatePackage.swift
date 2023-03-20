@@ -7,7 +7,7 @@
 
 import Fluent
 import Vapor
-
+//CREATE NEW TABLE 
 struct CreatePackage : AsyncMigration  {
     func prepare(on database: Database) async throws {
         try await database.schema("packaging")
@@ -23,5 +23,6 @@ struct CreatePackage : AsyncMigration  {
     }
     
    
-    
+   
 }
+
