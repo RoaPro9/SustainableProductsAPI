@@ -17,7 +17,7 @@ struct ProductController: RouteCollection{
         Product.get( use: index)
         
         //create a new product
-        Product.post( use: create)
+        Product.post(use: create)
     }
     // ------- get -------/ event route
     func index(req: Request) async throws -> [Product]{

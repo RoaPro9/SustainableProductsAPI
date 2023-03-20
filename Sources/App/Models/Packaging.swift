@@ -25,14 +25,14 @@ final class Packaging: Content, Model  {
     var description: String
 
     @Field(key: "sustainabilityRating")
-    var sustainabilityRating: Int
+    var sustainabilityRating: Double
 
     
     init() { }
     
     
   
-        init(id: UUID?, name: String, description: String, sustainabilityRating: Int) {
+        init(id: UUID?, name: String, description: String, sustainabilityRating: Double) {
             self.id = id
             self.name = name
             self.description = description
