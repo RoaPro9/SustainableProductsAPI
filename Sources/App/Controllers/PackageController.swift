@@ -18,6 +18,9 @@ struct PackageController: RouteCollection{
         
         //create a new product
         Packaging.post( use: create)
+        Packaging.delete(":id", use: delete)
+        
+        
     }
     // ------- get -------/ event route
     func index(req: Request) async throws -> [Packaging]{
@@ -38,7 +41,7 @@ struct PackageController: RouteCollection{
     }
     
     func delete(req: Request) async throws -> HTTPStatus{
-        guard  let Package = try await Packaging.find(req.parameters.get("PackagingID"), on: req.db) else{
+        guard  let Package = try await Packaging.find(req.parameters.get(":PackagingID"), on: req.db) else{
             throw Abort(.notFound)
         }
         try await Package .delete(on: req.db)

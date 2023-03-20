@@ -18,6 +18,8 @@ struct ProductController: RouteCollection{
         
         //create a new product
         Product.post(use: create)
+        
+        Product.delete(":id", use: delete)
     }
     // ------- get -------/ event route
     func index(req: Request) async throws -> [Product]{
@@ -38,11 +40,11 @@ struct ProductController: RouteCollection{
     }
     
     func delete(req: Request) async throws -> HTTPStatus{
-        guard  let product = try await Product.find(req.parameters.get("productID"), on: req.db) else{
+        guard  let product = try await Product.find(req.parameters.get(":id"), on: req.db) else{
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
-        return .noContent
+        return .ok
         
     }
     func update (req: Request) async throws -> HTTPStatus{
