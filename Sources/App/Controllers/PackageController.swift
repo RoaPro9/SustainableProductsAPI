@@ -19,7 +19,9 @@ struct PackageController: RouteCollection{
         //create a new product
         Packaging.post( use: create)
         Packaging.delete(":id", use: delete)
-        
+        Packaging.get(":id", use: getById)
+        Packaging.put( use: update)
+
         
     }
     // ------- get -------/ event route
@@ -49,12 +51,15 @@ struct PackageController: RouteCollection{
 
     
     func update (req: Request) async throws -> HTTPStatus{
-        let Package = try req.content.decode(Packaging.self)
-        guard let Package = try await Packaging.find(Package.id , on : req.db) else {
+        let package = try req.content.decode(Packaging.self)
+        guard let Package = try await Packaging.find(package.id , on : req.db) else {
             throw Abort(.notFound)
         }
-        Package.name = Package.name
-        try await Package.save(on : req.db)
+        Package.name = package.name
+        Package.description = package.description
+        Package.sustainabilityRating = package.sustainabilityRating
+        
+        try await Package.update(on : req.db)
         return .ok
     }
     
