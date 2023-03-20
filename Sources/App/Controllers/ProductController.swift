@@ -40,13 +40,12 @@ struct ProductController: RouteCollection{
     }
     
     func delete(req: Request) async throws -> HTTPStatus{
-        guard  let product = try await Product.find(req.parameters.get(":id"), on: req.db) else{
+        guard let product = try await Packaging.find(req.parameters.get("id"), on: req.db) else {
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
-        return .ok
-        
-    }
+        return .noContent}
+    
     func update (req: Request) async throws -> HTTPStatus{
         let product = try req.content.decode(Product.self)
         guard let product = try await Product.find(product.id , on : req.db) else {

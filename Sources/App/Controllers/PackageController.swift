@@ -39,15 +39,14 @@ struct PackageController: RouteCollection{
         try await Package.save(on: req.db)
         return Package
     }
-    
     func delete(req: Request) async throws -> HTTPStatus{
-        guard  let Package = try await Packaging.find(req.parameters.get(":PackagingID"), on: req.db) else{
+        guard let package = try await Packaging.find(req.parameters.get("id"), on: req.db) else {
             throw Abort(.notFound)
         }
-        try await Package .delete(on: req.db)
+        try await package.delete(on: req.db)
         return .noContent
-        
     }
+
     
     func update (req: Request) async throws -> HTTPStatus{
         let Package = try req.content.decode(Packaging.self)
