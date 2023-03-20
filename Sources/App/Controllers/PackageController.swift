@@ -46,6 +46,15 @@ struct PackageController: RouteCollection{
         
     }
     
+    func update (req: Request) async throws -> HTTPStatus{
+        let Package = try req.content.decode(Packaging.self)
+        guard let Package = try await Packaging.find(Package.id , on : req.db) else {
+            throw Abort(.notFound)
+        }
+        Package.name = Package.name
+        try await Package.save(on : req.db)
+        return .ok
+    }
     
     
     
