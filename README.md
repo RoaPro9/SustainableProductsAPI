@@ -62,7 +62,7 @@ The API has two models: Product and Packaging.
 
 ### Product Model
 
-```
+```swift
 final class Product: Model, Content {
     static let schema = "products"
     
@@ -97,7 +97,7 @@ final class Product: Model, Content {
 ```
 ### Packaging Model
 
-```
+```swift
 final class Packaging: Content, Model  {
     static let schema = "packaging"
     
@@ -130,3 +130,4 @@ final class Packaging: Content, Model  {
 }
 
 ```
+## Usage
