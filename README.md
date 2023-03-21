@@ -131,3 +131,18 @@ final class Packaging: Content, Model  {
 
 ```
 ## Usage
+To use this API, you will need to have Vapor installed. If you don't have Vapor installed, you can follow the installation guide [Here](https://docs.vapor.codes/install/macos/).
+
+Once you have Vapor installed, you can clone the repository by running the following command in your terminal:
+```
+git clone https://github.com/RoaPro9/SustainableProductsAPI.git
+```
+Next, navigate to the cloned repository and run the following command to build and start the API server:
+```
+vapor run
+```
+This will start the API server, and you can then access the endpoints via a client such as Postman or cURL.
+
+## Contribution
+
+Feel free to contribute to this project by forking the repository and submitting a pull request.
