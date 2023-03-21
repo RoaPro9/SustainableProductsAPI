@@ -4,22 +4,56 @@ This is a Vapor API for managing sustainable products and packaging. The API sup
 ## Endpoints
 ### Product Endpoints
 * Get all products
+Returns a list of all products.
 
 ```
-  GET /products
+  GET /Product
 ```
 * Get a specific product
 
 ```
-  GET /products/{id}
+  GET /Product/{id}
 ```
 * Create a new product
 
 ```
-  POST /products
+  POST /Product
 ```
 * Update a product
 
 ```
-  PUT /products/{id}
+  PUT /Product/{id}
+```
+* Deletes a specific product by ID
+
+```
+DELETE /Product/{id}
+```
+
+### Packaging Endpoints
+* Get all packaging
+Returns a list of all packaging options.
+
+```
+ GET /Packaging
+```
+* Get a specific packaging
+
+```
+  GET /Packaging/{id}
+```
+* Create a new packaging
+
+```
+  POST /Packaging
+```
+* Update a packaging
+
+```
+  PUT /Packaging/{id}
+```
+* Deletes a specific packaging by ID
+
+```
+DELETE /Packaging/{id}
 ```
