@@ -15,7 +15,7 @@ struct PackageController: RouteCollection{
         
         //get the info from db
         Packaging.get( use: index)
-        
+        Packaging.get( use: index2)
         //create a new product
         Packaging.post( use: create)
         Packaging.delete(":id", use: delete)
@@ -29,6 +29,11 @@ struct PackageController: RouteCollection{
         try await Packaging.query(on: req.db).all()
     }
     
+    func index2(req: Request) async throws -> [Packaging]{
+        try await Packaging.query(on: req.db)
+            .with(\.$pacginng)
+            .all()
+    }
     func getById(req: Request) async throws -> Packaging{
         guard let Package = try await Packaging.find(req.parameters.get("id"), on: req.db) else {
             throw Abort(.notFound)

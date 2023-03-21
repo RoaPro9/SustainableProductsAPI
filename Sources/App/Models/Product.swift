@@ -28,8 +28,6 @@ final class Product: Model, Content {
     @Field(key: "price")
     var price: Double
 
-
-    
     @Parent(key: "packaging_id")
     var packaging: Packaging
     

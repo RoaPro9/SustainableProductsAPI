@@ -27,6 +27,8 @@ final class Packaging: Content, Model  {
     @Field(key: "sustainabilityRating")
     var sustainabilityRating: Double
 
+    @Children(for: \.$packaging)
+    var pacginng: [Product]
     
     init() { }
     
