@@ -19,6 +19,10 @@ This API was developed using the following tools and technologies:
 * [PostgreSQL](https://www.postgresql.org) - an open source relational database management system used for storing data in this
 * [Postman](https://www.postman.com) - a powerful tool for testing APIs and documenting them.
 
+## Database Schema
+### (UML) diagram:
+
+![Blank diagram](https://user-images.githubusercontent.com/70070721/226981299-345764f9-6c67-47b2-a494-49e6938a3458.png)
 
 ## Endpoints
 ### Product Endpoints
