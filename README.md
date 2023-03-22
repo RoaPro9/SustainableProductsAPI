@@ -1,5 +1,11 @@
 # SustainableProducts Vapor API
 This is a Vapor API for managing sustainable products and packaging. The API supports the four main CRUD functions (Create, Read, Update, and Delete) for both products and packaging.
+## Tools Used
+This API was developed using the following tools and technologies:
+* [Vapor](https://vapor.codes) - a web framework for Swift.
+* [Heroku](https://dashboard.heroku.com/apps) - a cloud platform used for hosting and deploying web applications.
+* [Fluent](https://docs.vapor.codes/fluent/overview/) - a powerful Swift ORM (Object Relational Mapping) used for interacting with databases.
+* [PostgreSQL](https://www.postgresql.org) - an open source relational database management system used for storing data in this
 
 ## Endpoints
 ### Product Endpoints
