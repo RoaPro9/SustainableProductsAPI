@@ -1,11 +1,24 @@
 # SustainableProducts Vapor API
 This is a Vapor API for managing sustainable products and packaging. The API supports the four main CRUD functions (Create, Read, Update, and Delete) for both products and packaging.
 ## Tools Used
+
+
 This API was developed using the following tools and technologies:
+<p align="center">
+<img src="https://user-images.githubusercontent.com/70070721/226967118-16e62183-9478-416c-83dc-2b43af61a27d.png"  width="10%" height="10%">
+<img src="https://user-images.githubusercontent.com/70070721/226967132-d59678c5-66ac-497d-ad46-cf67a4cb6e13.png" width="10%" height="10%" >
+<img src="https://user-images.githubusercontent.com/70070721/226967223-75736b03-f4f8-44eb-a2b0-811f833370cd.jpeg"  width="10%" height="10%">
+<img src="https://user-images.githubusercontent.com/70070721/226980571-16f6e247-09ed-4bfe-b036-05cf8331e431.png" width="10%" height="10%" >
+  <img src="https://user-images.githubusercontent.com/70070721/226980412-f301f2d0-30fc-4d23-8edf-3aba50d3ec4d.png" width="10%" height="10%" >
+
+</p>
+
 * [Vapor](https://vapor.codes) - a web framework for Swift.
 * [Heroku](https://dashboard.heroku.com/apps) - a cloud platform used for hosting and deploying web applications.
 * [Fluent](https://docs.vapor.codes/fluent/overview/) - a powerful Swift ORM (Object Relational Mapping) used for interacting with databases.
 * [PostgreSQL](https://www.postgresql.org) - an open source relational database management system used for storing data in this
+* [Postman](https://www.postman.com) - a powerful tool for testing APIs and documenting them.
+
 
 ## Endpoints
 ### Product Endpoints
